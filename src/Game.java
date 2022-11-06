@@ -24,8 +24,8 @@ public class Game extends JFrame implements ActionListener {
         player.setBackground(Color.GRAY);
         ShootPanel shoot = new ShootPanel();
         shoot.setBackground(Color.GRAY);
-        centerPanel.add(player);
         centerPanel.add(shoot);
+        centerPanel.add(player);
         // south
         JPanel southPanel = new JPanel();
         southPanel.setBackground(Color.WHITE);

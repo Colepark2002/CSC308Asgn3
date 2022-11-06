@@ -11,7 +11,6 @@ public class PlayerPanel extends BoardPanel implements MouseListener, ActionList
 
 
     int ShipPieces = 17;
-    Stack<Marker> markers = new Stack<Marker>();
     JButton[][] board = new JButton[10][10];
     String[] Alph = {"A","B","C","D","E","F","G","H","I","J"};
 
@@ -23,7 +22,7 @@ public class PlayerPanel extends BoardPanel implements MouseListener, ActionList
         {
             for(int k = 0; k < 10; k++)
             {
-                board[i][k] = new JButton(Alph[i] + 1+k);
+                board[i][k] = new JButton(Alph[i] + (1+k));
                 add(board[i][k]);
                 board[i][k].addActionListener(this);
             }
