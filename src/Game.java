@@ -18,14 +18,14 @@ public class Game extends JFrame implements ActionListener {
         // center
         JPanel centerPanel = new JPanel();
         centerPanel.setBackground(Color.WHITE);
-        GridLayout grid = new GridLayout(1, 2);
+        GridLayout grid = new GridLayout(2, 1);
         centerPanel.setLayout(grid);
-        playerPanel = new PlayerPanel();
-        playerPanel.setBackground(Color.GRAY);
-        shootPanel = new ShootPanel();
-        shootPanel.setBackground(Color.GRAY);
-        centerPanel.add(playerPanel);
-        centerPanel.add(shootPanel);
+        PlayerPanel player = new PlayerPanel();
+        player.setBackground(Color.GRAY);
+        ShootPanel shoot = new ShootPanel();
+        shoot.setBackground(Color.GRAY);
+        centerPanel.add(player);
+        centerPanel.add(shoot);
         // south
         JPanel southPanel = new JPanel();
         southPanel.setBackground(Color.WHITE);
