@@ -4,9 +4,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.util.Stack;
 
-public class PlayerPanel extends BoardPanel implements MouseListener, ActionListener {
+public class PlayerPanel extends BoardPanel implements ActionListener {
 
 
 
@@ -34,35 +33,25 @@ public class PlayerPanel extends BoardPanel implements MouseListener, ActionList
 
     }
 
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-
-    }
-
-    @Override
-    public void mouseClicked(MouseEvent e) {
+    public void placeShip()
+    {
 
     }
 
-    @Override
-    public void mousePressed(MouseEvent e) {
-
-    }
 
     @Override
-    public void mouseReleased(MouseEvent e) {
+    public void actionPerformed(ActionEvent e)
+    {
+        int i = 0;
+        int k;
+        while( !e.getActionCommand().substring(0,1).equals(Alph[i]))
+        {
+            i +=1;
+        }
 
-    }
-
-    @Override
-    public void mouseEntered(MouseEvent e) {
-
-    }
-
-    @Override
-    public void mouseExited(MouseEvent e) {
-
+        k = Integer.parseInt(e.getActionCommand().substring(1)) - 1;
+        board[i][k].setBackground(Color.BLACK);
+        System.out.println("Index" + " " + i + " " + k);
     }
 
 
