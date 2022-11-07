@@ -20,10 +20,12 @@ public class Game extends JFrame implements ActionListener {
         centerPanel.setBackground(Color.WHITE);
         GridLayout grid = new GridLayout(2, 1);
         centerPanel.setLayout(grid);
+
         PlayerPanel player = new PlayerPanel();
         player.setBackground(Color.GRAY);
         ShootPanel shoot = new ShootPanel();
         shoot.setBackground(Color.GRAY);
+
         centerPanel.add(shoot);
         centerPanel.add(player);
         // south
