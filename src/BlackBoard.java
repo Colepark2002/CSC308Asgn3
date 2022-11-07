@@ -21,6 +21,8 @@ public class BlackBoard extends Observable {
         }
     }
 
+    //Going to send via the server connect both boards after either has been updated, both players update method then
+    //replaces their board with the one they receive.
     public void notifyObservers(){
 
     }
