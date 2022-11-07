@@ -11,10 +11,6 @@ public class PlayerPanel extends BoardPanel implements ActionListener {
 
     int ShipPieces = 17;
 
-    public PlayerPanel()
-    {
-    }
-
     public int getShipPieces() {
         return ShipPieces;
     }

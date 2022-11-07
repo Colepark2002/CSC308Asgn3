@@ -1,29 +1,37 @@
+import java.awt.*;
+import java.awt.event.ActionEvent;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-public class ShootPanel extends BoardPanel implements MouseListener {
-    @Override
-    public void mouseClicked(MouseEvent e) {
+public class ShootPanel extends BoardPanel{
 
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        super.actionPerformed(e);
+        int i = 0;
+        int k;
+        while( !e.getActionCommand().substring(0,1).equals(Alph[i]))
+        {
+            i +=1;
+        }
+
+        k = Integer.parseInt(e.getActionCommand().substring(1)) - 1;
+
+        board[i][k].setBackground(Color.WHITE);
+        System.out.println("Index" + " " + i + " " + k);
     }
 
-    @Override
-    public void mousePressed(MouseEvent e) {
+    public Color sendShot(int r, int c){
+        Color marker = Color.WHITE;
+        /*
 
-    }
 
-    @Override
-    public void mouseReleased(MouseEvent e) {
-
-    }
-
-    @Override
-    public void mouseEntered(MouseEvent e) {
-
-    }
-
-    @Override
-    public void mouseExited(MouseEvent e) {
-
+        BlackBoard enemy = BlackBoard.getBoard();
+        BoardPanel enemyBoard = enemy.getEnemyBoard();
+        if (enemyBoard.board[r][c].getBackground().equals(Color.Black)){
+            marker = Color.RED
+        }
+         */
+        return marker;
     }
 }
