@@ -13,6 +13,7 @@ public class PlayerPanel extends BoardPanel {
     int[] shipSize = {5, 4, 3, 3, 2};
     int shipInd = 0;
 
+
     public PlayerPanel()
     {
         placeShips();
