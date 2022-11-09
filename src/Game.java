@@ -44,6 +44,10 @@ public class Game extends JFrame implements ActionListener {
             JLabel value2 = new JLabel(values[i]);
             JLabel letter = new JLabel(letters[i]);
             JLabel letter2 = new JLabel(letters[i]);
+            value.setHorizontalAlignment(JLabel.CENTER);
+            value.setVerticalAlignment(JLabel.CENTER);
+            value2.setHorizontalAlignment(JLabel.CENTER);
+            value2.setVerticalAlignment(JLabel.CENTER);
             xaxis.add(value);
             xaxis2.add(value2);
             yaxis.add(letter);
