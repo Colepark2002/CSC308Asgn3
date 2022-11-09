@@ -26,7 +26,7 @@ public class BlackBoard extends Observable{
         }
     }
 
-    
+
     public static BlackBoard getInstance(){
         if(instance == null){
             instance = new BlackBoard();
@@ -35,12 +35,13 @@ public class BlackBoard extends Observable{
     }
 
 
-    public void shootBoard(int boardNum, int r, int c){
+    public void shootPlayerBoard(int boardNum, int r, int c){
+        setChanged();
         if(boardNum == 1) {
-            //player1Board.getShot(r,c)
+            player1Board.receiveShot(r, c);
         }
         else{
-            //player2Board.getShot(r,c)
+            player2Board.receiveShot(r,c);
         }
         notifyObservers();
     }
