@@ -26,6 +26,7 @@ public class BlackBoard extends Observable{
         }
     }
 
+    
     public static BlackBoard getInstance(){
         if(instance == null){
             instance = new BlackBoard();
@@ -34,8 +35,20 @@ public class BlackBoard extends Observable{
     }
 
 
+    public void shootBoard(int boardNum, int r, int c){
+        if(boardNum == 1) {
+            //player1Board.getShot(r,c)
+        }
+        else{
+            //player2Board.getShot(r,c)
+        }
+        notifyObservers();
+    }
+
+
     @Override
     public void notifyObservers(){
-        //not sure what to put here ATM.
+        //not sure what to put here ATM, but this will be called after either player has shot the other,
+        //this will then notify the players that a board has changed so that both players can update their boards.
     }
 }
