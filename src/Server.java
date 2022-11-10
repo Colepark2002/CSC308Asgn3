@@ -12,73 +12,49 @@ class Server {
             server.setReuseAddress(true);
 
             Socket player1 = server.accept();
+            System.out.println("Player 1 connected");
             Socket player2 = server.accept();
+            System.out.println("Player 2 connected");
 
-            System.out.println("New client connected" + player1.getInetAddress().getHostAddress());
-            System.out.println("New client connected" + player2.getInetAddress().getHostAddress());
+            PlayerHandler playerHandler = new PlayerHandler(player1, player2);
 
-            ClientHandler p1Sock = new ClientHandler(player1);
-            ClientHandler p2Sock = new ClientHandler(player2);
-
-            new Thread(p1Sock).start();
-            new Thread(p2Sock).start();
+            new Thread(playerHandler).start();
 
         }
         catch (IOException e) {
-            e.printStackTrace();
-        }
-        finally {
-            if (server != null) {
-                try {
-                    server.close();
-                }
-                catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
+            System.out.println(e);
         }
     }
 
 
-    private static class ClientHandler implements Runnable {
-        private final Socket clientSocket;
+    private static class PlayerHandler implements Runnable {
+        private final Socket player1;
+        private final Socket player2;
         private BlackBoard board;
 
-        public ClientHandler(Socket socket)
+        public PlayerHandler(Socket player1, Socket player2)
         {
-            this.clientSocket = socket;
+            this.player1 = player1;
+            this.player2 = player2;
             board = BlackBoard.getInstance();
         }
 
         public void run()
         {
-            PrintWriter out = null;
-            BufferedReader in = null;
             try {
+                DataOutputStream out1 = new DataOutputStream(player1.getOutputStream());
+                DataInputStream in1 = new DataInputStream(player1.getInputStream());
+                DataOutputStream out2 = new DataOutputStream(player2.getOutputStream());
+                DataInputStream in2 = new DataInputStream(player2.getInputStream());
 
-                out = new PrintWriter(clientSocket.getOutputStream(), true);
+                // Receive ship placements from p1
+                // Receive ship placements from p2
 
-                in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-
-                // do something
             }
             catch (IOException e) {
-                e.printStackTrace();
+                System.out.println(e);
             }
-            finally {
-                try {
-                    if (out != null) {
-                        out.close();
-                    }
-                    if (in != null) {
-                        in.close();
-                        clientSocket.close();
-                    }
-                }
-                catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
+
         }
     }
 }
