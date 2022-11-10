@@ -82,8 +82,8 @@ public class Game extends JFrame implements ActionListener {
         subPanel2.add(rightPadding2, BorderLayout.EAST);
         subPanel2.add(topPadding2, BorderLayout.SOUTH);
 
-        centerPanel.add(subPanel1);
         centerPanel.add(subPanel2);
+        centerPanel.add(subPanel1);
 
         // frame
         BorderLayout mainLayout = new BorderLayout();

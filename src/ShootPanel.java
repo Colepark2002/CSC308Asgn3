@@ -26,10 +26,8 @@ public class ShootPanel extends BoardPanel implements Observer {
     public Color sendShot(int r, int c){
         Color marker = Color.WHITE;
         /*
-        PlayerPanel enemyBoard = BlackBoard.getInstance().getBoard(2);
-        if (enemyBoard.receiveShot(r, c)) {
-            marker = Color.RED;
-        }
+        BlackBoard enemyBoard= BlackBoard.getInstance();
+        enemyBoard.shootPlayerBoard(2, r, c );
 
          */
         return marker;
