@@ -1,10 +1,16 @@
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
-public class Game extends JFrame implements ActionListener {
+/**
+ * Creates a window holding the player and shoot panels
+ *
+ * @author Lauren Allen
+ * @version 1.0
+ * @since 2022-11-9
+ */
+
+public class Game extends JFrame {
 
     public static void main(String[] args) {
         Game win = new Game();
@@ -15,7 +21,7 @@ public class Game extends JFrame implements ActionListener {
 
     public Game() {
         super("Battleship");
-        // center
+
         JPanel centerPanel = new JPanel();
         centerPanel.setBackground(Color.WHITE);
         GridLayout grid = new GridLayout(2, 1);
@@ -91,13 +97,4 @@ public class Game extends JFrame implements ActionListener {
         add(centerPanel, BorderLayout.CENTER);
     }
 
-    /**
-     * actionPerformed
-     * 
-     * @param e
-     *          responds to action events accordingly based on buttons selected
-     */
-    public void actionPerformed(ActionEvent e) {
-        System.out.println(e.getActionCommand());
-    }
 }
