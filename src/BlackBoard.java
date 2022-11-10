@@ -8,6 +8,7 @@ import java.util.Observable;
  */
 public class BlackBoard extends Observable{
     PlayerPanel player1Board, player2Board;
+    boolean hit;
     private static BlackBoard instance;
 
 
@@ -17,7 +18,7 @@ public class BlackBoard extends Observable{
     }
 
 
-    public BoardPanel getBoard(int playerNum){
+    public PlayerPanel getBoard(int playerNum){
         if(playerNum == 1){
             return player1Board;
         }
@@ -34,14 +35,18 @@ public class BlackBoard extends Observable{
         return instance;
     }
 
+    public boolean getHit(){
+        return hit;
+    }
+
 
     public void shootPlayerBoard(int boardNum, int r, int c){
         setChanged();
         if(boardNum == 1) {
-            player1Board.receiveShot(r, c);
+            hit = player1Board.receiveShot(r, c);
         }
         else{
-            player2Board.receiveShot(r,c);
+            hit = player2Board.receiveShot(r,c);
         }
         notifyObservers();
     }

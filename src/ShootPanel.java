@@ -6,35 +6,36 @@ import java.util.Observable;
 import java.util.Observer;
 
 public class ShootPanel extends BoardPanel implements Observer {
-
+    int r, c;
     @Override
     public void actionPerformed(ActionEvent e) {
         super.actionPerformed(e);
-        int i = 0;
-        int k;
+        r = 0;
         while( !e.getActionCommand().substring(0,1).equals(Alph[i]))
         {
-            i +=1;
+            r +=1;
         }
 
-        k = Integer.parseInt(e.getActionCommand().substring(1)) - 1;
+        c = Integer.parseInt(e.getActionCommand().substring(1)) - 1;
 
-        board[i][k].setBackground(sendShot(i, k));
-        System.out.println("Index" + " " + i + " " + k);
+        board[r][c].setBackground(Color.WHITE);
+        sendShot(r, c);
+
+        System.out.println("Index" + " " + r + " " + c);
     }
 
-    public Color sendShot(int r, int c){
-        Color marker = Color.WHITE;
-        /*
+    public void sendShot(int r, int c){
         BlackBoard enemyBoard= BlackBoard.getInstance();
         enemyBoard.shootPlayerBoard(2, r, c );
-
-         */
-        return marker;
     }
 
     @Override
     public void update(Observable o, Object arg) {
-
+        BlackBoard bboard = BlackBoard.getInstance();
+        Color col = Color.WHITE;
+        if (bboard.getHit()){
+            col = Color.RED;
+        }
+        board[r][c].setBackground(col);
     }
 }
