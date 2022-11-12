@@ -17,7 +17,6 @@ public class PlayerPanel extends BoardPanel {
     int shipInd = 0;
 
     public PlayerPanel() {
-        super();
         placeShips();
         BlackBoard bBoard = BlackBoard.getInstance();
         bBoard.setBoard(player, this);

@@ -13,8 +13,6 @@ public class BlackBoard extends Observable{
 
 
     protected BlackBoard(){
-        player1Board = new PlayerPanel();
-        player2Board = new PlayerPanel();
     }
 
 

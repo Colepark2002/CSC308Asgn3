@@ -14,7 +14,7 @@ public class BoardPanel extends JPanel implements ActionListener, Observer {
     public BoardPanel() {
         GridLayout g = new GridLayout(10, 10);
         setLayout(g);
-        client = new Client();
+        client = Client.getInstance();
         player = client.getPlayerNum();
         for (int i = 0; i < 10; i++) {
             for (int k = 0; k < 10; k++) {

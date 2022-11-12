@@ -6,8 +6,9 @@ public class Client {
     DataOutputStream dout;
     DataInputStream din;
     int playerNum;
+    private static Client instance;
 
-    public Client() {
+    protected Client() {
         try {
             Socket s = new Socket("localhost", 6666);
             dout = new DataOutputStream(s.getOutputStream());
@@ -25,6 +26,13 @@ public class Client {
         } catch (Exception e) {
             System.out.println(e);
         }
+    }
+
+    public static Client getInstance(){
+        if(instance == null){
+            instance = new Client();
+        }
+        return instance;
     }
 
     public int getPlayerNum(){
