@@ -46,19 +46,36 @@ class Server {
         public void run()
         {
             try {
-                DataOutputStream out1 = new DataOutputStream(player1.getOutputStream());
+
                 DataInputStream in1 = new DataInputStream(player1.getInputStream());
-                DataOutputStream out2 = new DataOutputStream(player2.getOutputStream());
                 DataInputStream in2 = new DataInputStream(player2.getInputStream());
 
-                // Receive ship placements from p1
-                // Receive ship placements from p2
+                while(true) {
+                    // Player 1 shoots
+                    String p1Shot;
+                    while ((p1Shot = in1.readUTF()) == null) {
+                    }
+                    parseShot(p1Shot, 2);
+
+                    // Player 2 shoots
+                    String p2Shot;
+                    while ((p2Shot = in2.readUTF()) == null) {
+                    }
+                    parseShot(p2Shot, 1);
+                }
 
             }
             catch (IOException e) {
                 System.out.println(e);
             }
 
+        }
+
+        public void parseShot(String shot, int player) {
+            String[] array = shot.split(" ");
+            int r = Integer.parseInt(array[0]);
+            int c = Integer.parseInt(array[1]);
+            board.shootPlayerBoard(player, r, c);
         }
     }
 }
