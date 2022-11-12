@@ -5,9 +5,15 @@ import java.awt.event.MouseListener;
 import java.util.Observable;
 import java.util.Observer;
 
+
+/**
+ * @author Van Park
+ */
 public class ShootPanel extends BoardPanel implements Observer {
     int r, c;
     @Override
+
+
     public void actionPerformed(ActionEvent e) {
         super.actionPerformed(e);
         r = 0;
