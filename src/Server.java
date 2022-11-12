@@ -1,7 +1,16 @@
 import java.io.*;
 import java.net.*;
 
+/**
+ * Creates a server that communicates with the two players to update the BlackBoard
+ * @author Bret Craig, Van Park (helped with some implementation)
+ */
 class Server {
+
+    /**
+     * Aquires a connection to both players, then starts a thread for the server.
+     * @param args
+     */
     public static void main(String[] args)
     {
         ServerSocket server = null;
@@ -43,6 +52,9 @@ class Server {
             board = BlackBoard.getInstance();
         }
 
+        /**
+         * Continuously reads shot inputs from both players
+         */
         public void run()
         {
             try {
@@ -71,6 +83,11 @@ class Server {
 
         }
 
+        /**
+         * Parses the row and column from the client input, then sends that to the board
+         * @param shot
+         * @param player
+         */
         public void parseShot(String shot, int player) {
             String[] array = shot.split(" ");
             int r = Integer.parseInt(array[0]);
