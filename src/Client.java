@@ -5,25 +5,30 @@ public class Client {
 
     DataOutputStream dout;
     DataInputStream din;
+    int playerNum;
 
     public Client() {
         try {
             Socket s = new Socket("localhost", 6666);
             dout = new DataOutputStream(s.getOutputStream());
             din = new DataInputStream(s.getInputStream());
+            getInput();
 
         } catch (Exception e) {
             System.out.println(e);
         }
     }
 
-    public String getInput() {
+    public void getInput() {
         try {
-            return din.readUTF();
+            playerNum =  Integer.parseInt(din.readUTF());
         } catch (Exception e) {
             System.out.println(e);
         }
-        return null;
+    }
+
+    public int getPlayerNum(){
+        return playerNum;
     }
 
     public void sendOutput(String output) {

@@ -35,6 +35,15 @@ public class BlackBoard extends Observable{
         return instance;
     }
 
+    public void setBoard(int playerNum, PlayerPanel pBoard){
+        if(playerNum == 1){
+            player1Board = pBoard;
+        }
+        else{
+            player2Board = pBoard;
+        }
+    }
+
     public boolean getHit(){
         return hit;
     }

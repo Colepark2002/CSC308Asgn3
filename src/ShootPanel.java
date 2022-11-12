@@ -43,8 +43,7 @@ public class ShootPanel extends BoardPanel implements Observer {
      * @param c the column for the selected shot
      */
     public void sendShot(int r, int c){
-        BlackBoard enemyBoard= BlackBoard.getInstance();
-        enemyBoard.shootPlayerBoard(2, r, c );
+        client.sendOutput("" + r + " " + c);
     }
 
 

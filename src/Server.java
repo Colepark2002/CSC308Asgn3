@@ -13,8 +13,12 @@ class Server {
 
             Socket player1 = server.accept();
             System.out.println("Player 1 connected");
+            DataOutputStream out1 = new DataOutputStream(player1.getOutputStream());
+            out1.writeUTF("1");
             Socket player2 = server.accept();
             System.out.println("Player 2 connected");
+            DataOutputStream out2 = new DataOutputStream(player2.getOutputStream());
+            out2.writeUTF("2");
 
             PlayerHandler playerHandler = new PlayerHandler(player1, player2);
 

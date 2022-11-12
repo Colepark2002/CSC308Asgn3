@@ -8,11 +8,14 @@ import java.util.Observer;
 public class BoardPanel extends JPanel implements ActionListener, Observer {
     JButton[][] board = new JButton[10][10];
     String[] Alph = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J" };
-    int Player = 1;
+    int player;
+    Client client;
 
     public BoardPanel() {
         GridLayout g = new GridLayout(10, 10);
         setLayout(g);
+        client = new Client();
+        player = client.getPlayerNum();
         for (int i = 0; i < 10; i++) {
             for (int k = 0; k < 10; k++) {
                 board[i][k] = new JButton(Alph[i] + (1 + k));
