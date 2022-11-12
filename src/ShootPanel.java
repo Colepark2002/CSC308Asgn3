@@ -11,7 +11,7 @@ public class ShootPanel extends BoardPanel implements Observer {
     public void actionPerformed(ActionEvent e) {
         super.actionPerformed(e);
         r = 0;
-        while( !e.getActionCommand().substring(0,1).equals(Alph[i]))
+        while( !e.getActionCommand().substring(0,1).equals(Alph[r]))
         {
             r +=1;
         }

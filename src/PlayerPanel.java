@@ -15,10 +15,20 @@ public class PlayerPanel extends BoardPanel {
         placeShips();
     }
 
+    /**
+     * Returns the amount of ship pieces left
+     * @return int
+     */
     public int getShipPieces() {
         return ShipPieces;
     }
 
+    /**
+     * Allows the Panel to receive a shot and update its board and indicate if the shot was a hit or miss
+     * @param i determines row to select in board
+     * @param k determines column to select in board
+     * @return boolean if the shot hit or not
+     */
     public boolean receiveShot(int i, int k) {
         if (board[i][k].getBackground().equals(Color.BLACK)) {
             board[i][k].setBackground(Color.red);
@@ -31,6 +41,9 @@ public class PlayerPanel extends BoardPanel {
 
     }
 
+    /**
+     * Sends Messages to the User in dialog boxes explaining how to place ships
+     */
     public void placeShips() {
         JOptionPane.showMessageDialog(this, "Now you can place your ships");
         JOptionPane.showMessageDialog(this,
@@ -38,6 +51,11 @@ public class PlayerPanel extends BoardPanel {
         JOptionPane.showMessageDialog(this, "Start by placing your battleship " + shipSize[shipInd] + " X 1");
     }
 
+    /**
+     * Allows the User to place ships by indicating a index and direction
+     * @param startIndex where to start placing the ship
+     * @param dir the direction in which the ship will be placed
+     */
     public void placeShip(int[] startIndex, String dir) {
         switch (dir) {
             case "up":
@@ -95,6 +113,10 @@ public class PlayerPanel extends BoardPanel {
 
     }
 
+    /**
+     * Override of the ActionListener method and allows certain actions to be done to place ships
+     * @param e an Action even
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         if (placingShips && !(e.getActionCommand().equals("OK"))) {
