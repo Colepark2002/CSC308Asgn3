@@ -2,10 +2,13 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Observable;
+import java.util.Observer;
 
-public class BoardPanel extends JPanel implements ActionListener {
+public class BoardPanel extends JPanel implements ActionListener, Observer {
     JButton[][] board = new JButton[10][10];
     String[] Alph = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J" };
+    int Player = 1;
 
     public BoardPanel() {
         GridLayout g = new GridLayout(10, 10);
@@ -22,5 +25,13 @@ public class BoardPanel extends JPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+    }
+
+    @Override
+    public void update(Observable o, Object arg) {
+    }
+
+    public JButton[][] getBoard() {
+        return board;
     }
 }

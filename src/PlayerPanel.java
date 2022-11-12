@@ -1,7 +1,12 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.util.Observable;
 
+/**
+ * A board panel that communicates with the blackboard to determine if shots hit and allow the user to place ships
+ * @author Cole Park
+ */
 public class PlayerPanel extends BoardPanel {
 
     int ShipPieces = 17;
@@ -15,10 +20,6 @@ public class PlayerPanel extends BoardPanel {
         placeShips();
     }
 
-    /**
-     * Returns the amount of ship pieces left
-     * @return int
-     */
     public int getShipPieces() {
         return ShipPieces;
     }
@@ -41,9 +42,6 @@ public class PlayerPanel extends BoardPanel {
 
     }
 
-    /**
-     * Sends Messages to the User in dialog boxes explaining how to place ships
-     */
     public void placeShips() {
         JOptionPane.showMessageDialog(this, "Now you can place your ships");
         JOptionPane.showMessageDialog(this,
@@ -113,10 +111,6 @@ public class PlayerPanel extends BoardPanel {
 
     }
 
-    /**
-     * Override of the ActionListener method and allows certain actions to be done to place ships
-     * @param e an Action even
-     */
     @Override
     public void actionPerformed(ActionEvent e) {
         if (placingShips && !(e.getActionCommand().equals("OK"))) {
@@ -158,5 +152,8 @@ public class PlayerPanel extends BoardPanel {
         }
 
     }
-
+    @Override
+    public void update(Observable o, Object arg) {
+        board = BlackBoard.getInstance().getBoard(Player).getBoard();
+    }
 }

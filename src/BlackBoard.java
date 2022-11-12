@@ -51,10 +51,4 @@ public class BlackBoard extends Observable{
         notifyObservers();
     }
 
-
-    @Override
-    public void notifyObservers(){
-        //not sure what to put here ATM, but this will be called after either player has shot the other,
-        //this will then notify the players that a board has changed so that both players can update their boards.
-    }
 }
