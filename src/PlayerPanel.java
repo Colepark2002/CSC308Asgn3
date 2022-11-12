@@ -17,7 +17,10 @@ public class PlayerPanel extends BoardPanel {
     int shipInd = 0;
 
     public PlayerPanel() {
+        super();
         placeShips();
+        BlackBoard bBoard = BlackBoard.getInstance();
+        bBoard.setBoard(player, this);
     }
 
     public int getShipPieces() {
@@ -154,6 +157,6 @@ public class PlayerPanel extends BoardPanel {
     }
     @Override
     public void update(Observable o, Object arg) {
-        board = BlackBoard.getInstance().getBoard(Player).getBoard();
+        board = BlackBoard.getInstance().getBoard(player).getBoard();
     }
 }

@@ -30,8 +30,6 @@ public class ShootPanel extends BoardPanel implements Observer {
         }
 
         c = Integer.parseInt(e.getActionCommand().substring(1)) - 1;
-
-        board[r][c].setBackground(Color.WHITE);
         sendShot(r, c);
 
         System.out.println("Index" + " " + r + " " + c);
