@@ -41,6 +41,7 @@ public class ShootPanel extends BoardPanel implements Observer {
      * @param c the column for the selected shot
      */
     public void sendShot(int r, int c){
+        System.out.println("Shot taken from player " + player);
         client.sendOutput("" + r + " " + c);
     }
 
