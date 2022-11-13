@@ -5,6 +5,13 @@ import java.awt.event.ActionListener;
 import java.util.Observable;
 import java.util.Observer;
 
+/**
+ * Assignment 3
+ *
+ * @author  Cole Park
+ * @version 1.0
+ * @since   2022-12-9
+ */
 public class BoardPanel extends JPanel implements ActionListener, Observer {
     JButton[][] board = new JButton[10][10];
     String[] Alph = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J" };
