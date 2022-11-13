@@ -1,6 +1,7 @@
 import java.util.Observable;
 /**
  * Serves as the Singleton that holds both player's board
+ * Assignment 3
  *
  * @author  Jacob Shapero
  * @version 1.0
