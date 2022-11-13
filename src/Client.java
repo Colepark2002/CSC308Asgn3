@@ -2,8 +2,11 @@ import java.io.*;
 import java.net.*;
 
 /**
- * Creates a client. Implements singleton, as PlayerPanel and ShootPanel must access the same client instnace.
+ * Creates a client. Implements singleton, as PlayerPanel and ShootPanel must access the same client instance
+ * Assignment 3
  * @author Bret Craig, Van Park (helped with some implementation)
+ * @version 1.0
+ * @since   2022-11-9
  */
 public class Client {
 
