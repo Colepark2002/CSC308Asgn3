@@ -3,7 +3,11 @@ import java.net.*;
 
 /**
  * Creates a server that communicates with the two players to update the BlackBoard
+ * Assignment 3
+ *
  * @author Bret Craig, Van Park (helped with some implementation)
+ * @version 1.0
+ * @since   2022-11-9
  */
 class Server {
 
