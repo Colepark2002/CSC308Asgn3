@@ -8,6 +8,7 @@ import java.util.Observer;
 
 /**
  * The Panel in charge of dealing with the s
+ * Assignment 3
  *
  * @author Van Park
  * @version 1.0
