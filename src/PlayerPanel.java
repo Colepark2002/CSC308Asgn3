@@ -5,7 +5,11 @@ import java.util.Observable;
 
 /**
  * A board panel that communicates with the blackboard to determine if shots hit and allow the user to place ships
+ * Assignment 3
+ *
  * @author Cole Park
+ * @version 1.0
+ * @since   2022-11-9
  */
 public class PlayerPanel extends BoardPanel {
 
