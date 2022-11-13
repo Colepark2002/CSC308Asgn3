@@ -4,6 +4,7 @@ import java.awt.*;
 
 /**
  * Creates a window holding the player and shoot panels
+ * Assignment 3
  *
  * @author Lauren Allen
  * @version 1.0
